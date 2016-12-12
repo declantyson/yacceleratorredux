@@ -2,13 +2,13 @@
  *
  *  accelerator-redux/
  *  Declan Tyson
- *  v0.0.1
- *  09/12/2016
+ *  v0.0.2
+ *  12/12/2016
  *
  */
 
 import { combineReducers } from 'redux'
-import { ADD_TO_BASKET } from './../actions'
+import { ADD_TO_BASKET } from './../actions/product'
 
 const basket = (state = { items : [] }, action) => {
     switch (action.type) {
