@@ -1,0 +1,57 @@
+/*
+ *
+ *  accelerator-redux/
+ *  Declan Tyson
+ *  v0.0.3
+ *  13/12/2016
+ *
+ */
+.basket > h2 {
+  position: absolute;
+  right: 0px;
+  font-weight: lighter;
+  font-size: 20px;
+  line-height: 20px;
+  margin: 30px;
+  cursor: pointer; }
+.basket .items {
+  position: absolute;
+  right: -320px;
+  top: 80px;
+  width: 280px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: solid 1px #cdcdcd;
+  -webkit-transition: right 0.4s ease-out;
+  -moz-transition: right 0.4s ease-out;
+  -ms-transition: right 0.4s ease-out;
+  -o-transition: right 0.4s ease-out;
+  transition: right 0.4s ease-out; }
+  .basket .items.visible {
+    right: 0px; }
+  .basket .items .product {
+    padding: 10px 0;
+    border-bottom: solid 1px #cdcdcd; }
+    .basket .items .product:first-of-type {
+      padding-top: 0; }
+    .basket .items .product:last-of-type {
+      padding-bottom: 0;
+      border: none; }
+    .basket .items .product img {
+      float: left;
+      width: 64px; }
+    .basket .items .product h1 {
+      float: left;
+      width: 200px;
+      font-size: 14px;
+      padding-left: 10px;
+      margin: 0; }
+    .basket .items .product h2 {
+      float: left;
+      width: 200px;
+      font-size: 12px;
+      padding-left: 10px;
+      font-weight: lighter;
+      margin: 0; }
+
+/*# sourceMappingURL=basket.css.map */

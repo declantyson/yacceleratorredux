@@ -1,0 +1,21 @@
+/*
+ *
+ *  accelerator-redux/
+ *  Declan Tyson
+ *  v0.0.3
+ *  13/12/2016
+ *
+ */
+.products {
+  padding-top: 100px;
+  max-width: 1200px;
+  margin: 0 auto; }
+  .products .product {
+    float: left;
+    width: 33%;
+    text-align: center;
+    padding-bottom: 40px; }
+    .products .product:nth-of-type(3n + 1) {
+      clear: both; }
+
+/*# sourceMappingURL=product.css.map */

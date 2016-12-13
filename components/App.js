@@ -2,21 +2,21 @@
  *
  *  accelerator-redux/
  *  Declan Tyson
- *  v0.0.2
- *  12/12/2016
+ *  v0.0.3
+ *  13/12/2016
  *
  */
 
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
-import ProductView from './../containers/Product'
+import ProductOverview from './../containers/Product'
 import BasketView from './../containers/Basket'
 import { fetchProducts } from '../actions/product'
+import { createBasket } from '../actions/basket'
 
 class App extends React.Component {
     constructor(props) {
         super(props);
-
     }
 
     componentDidMount() {
@@ -24,20 +24,29 @@ class App extends React.Component {
     }
 
     render() {
-        console.log(this.props);
         let products = [];
         if(this.props.products) {
-            products = this.props.products.map((product) => {
+            products = this.props.products.map((product, i) => {
+                let imageBase = "https://apparel-uk.profiledemo.aws.e2y.co.uk";
                 return (
-                    <ProductView sku={product.code}/>
+                    <ProductOverview
+                        sku={product.code}
+                        image={imageBase + product.images[0].url}
+                        name={product.name}
+                        price={product.price.formattedValue}
+                        key={i} />
                 );
             });
         }
 
         return (
-            <div onClick={this.props.onClick}>
-                <BasketView />
-                {products}
+            <div>
+                <header>
+                    <BasketView />
+                </header>
+                <div className="products">
+                    {products}
+                </div>
             </div>
         )
     }

@@ -1,0 +1,24 @@
+/*
+ *
+ *  accelerator-redux/
+ *  Declan Tyson
+ *  v0.0.3
+ *  13/12/2016
+ *
+ */
+html, body {
+  margin: 0;
+  font-family: sans-serif; }
+
+header {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background-color: #f0f0f0;
+  border-bottom: solid 1px #cdcdcd;
+  height: 80px; }
+
+.clearfix {
+  clear: both; }
+
+/*# sourceMappingURL=global.css.map */

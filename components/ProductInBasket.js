@@ -9,24 +9,23 @@
 
 import React, { PropTypes } from 'react'
 
-const Product = ({ onClick, sku, image, name, price }) => {
+const ProductInBasket = ({ sku, image, name, price }) => {
     let className = `product product-${sku}`;
     return (
         <div className={className}>
             <img src={image} alt={name} />
             <h1>{ name }</h1>
             <h2>{ price }</h2>
-            <button onClick={onClick}>Add to basket</button>
+            <div className="clearfix"></div>
         </div>
     )
 };
 
-Product.propTypes = {
-    onClick: PropTypes.func.isRequired,
+ProductInBasket.propTypes = {
     sku: PropTypes.string.isRequired,
     image: PropTypes.string,
     name: PropTypes.string.isRequired,
     price: PropTypes.string.isRequired
 };
 
-export default Product
+export default ProductInBasket
