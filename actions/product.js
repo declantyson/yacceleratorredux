@@ -2,12 +2,13 @@
  *
  *  accelerator-redux/
  *  Declan Tyson
- *  v0.0.2
- *  13/12/2016
+ *  v0.0.4
+ *  12/09/2017
  *
  */
 
 import fetch from 'isomorphic-fetch'
+import { API_URL } from '../index'
 
 export const FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS';
 export const FETCH_PRODUCTS_FAILURE = 'FETCH_PRODUCTS_FAILURE';
@@ -29,7 +30,7 @@ export const receiveProducts = products => {
 
 export const fetchProducts = () => {
     return (dispatch, getState) => {
-        return fetch('https://apparel-uk.profiledemo.aws.e2y.co.uk/rest/v2/apparel-uk/products/search?pageSize=20&fields=FULL')
+        return fetch(`${API_URL}/products/search?pageSize=20&fields=FULL`)
             .then(response => response.json())
             .then(json => dispatch(receiveProducts(json.products)));
     };

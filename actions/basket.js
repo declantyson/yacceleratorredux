@@ -2,12 +2,13 @@
  *
  *  accelerator-redux/
  *  Declan Tyson
- *  v0.0.3
- *  13/12/2016
+ *  v0.0.4
+ *  12/09/2017
  *
  */
 
 import fetch from 'isomorphic-fetch'
+import { API_URL } from '../index'
 
 export const ADD_TO_BASKET = 'ADD_TO_BASKET';
 export const RECEIVE_BASKET_SUCCESS = 'RECEIVE_BASKET_SUCCESS';
@@ -27,9 +28,8 @@ export const toggleBasketView = () => {
 };
 
 export const createBasket = () => {
-    console.log("creating a basket");
     return (dispatch, getState) => {
-        return fetch('https://apparel-uk.profiledemo.aws.e2y.co.uk/rest/v2/apparel-uk/users/anonymous/carts', { method: 'POST' })
+        return fetch(`${API_URL}/users/anonymous/carts`, { method: 'POST' })
             .then(response => response.json())
             .then(json => dispatch(receiveBasket(json)));
     };

@@ -2,8 +2,8 @@
  *
  *  accelerator-redux/
  *  Declan Tyson
- *  v0.0.3
- *  13/12/2016
+ *  v0.0.4
+ *  12/09/2017
  *
  */
 
@@ -14,7 +14,8 @@ import ProductInBasket from './../components/ProductInBasket'
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        sku: ownProps.sku
+        sku: ownProps.sku,
+        basket: state.basket.basket
     }
 };
 

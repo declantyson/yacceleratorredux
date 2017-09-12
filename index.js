@@ -2,8 +2,8 @@
  *
  *  accelerator-redux/
  *  Declan Tyson
- *  v0.0.2
- *  12/12/2016
+ *  v0.0.4
+ *  12/09/2017
  *
  */
 
@@ -18,6 +18,9 @@ import { Provider } from 'react-redux'
 import reducer from './reducers'
 import App from './components/App'
 
+export const API_BASE = "https://electronics.local:9002";
+export const API_STORE = "electronics";
+export const API_URL = `${API_BASE}/rest/v2/${API_STORE}`;
 
 let store = createStore(
    reducer,

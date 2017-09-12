@@ -2,8 +2,8 @@
  *
  *  accelerator-redux/
  *  Declan Tyson
- *  v0.0.3
- *  13/12/2016
+ *  v0.0.4
+ *  12/09/2017
  *
  */
 
@@ -13,6 +13,7 @@ import { createBasket, toggleBasketView } from './../actions/basket'
 
 const mapStateToProps = (state, ownProps) => {
     return {
+        basket: state.basket.basket,
         items: state.basket.items,
         visibility: state.basket.visibility
     }

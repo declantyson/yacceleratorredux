@@ -2,19 +2,18 @@
  *
  *  accelerator-redux/
  *  Declan Tyson
- *  v0.0.3
- *  13/12/2016
+ *  v0.0.4
+ *  12/09/2017
  *
  */
 
 import React, { PropTypes } from 'react'
 import { ProductBasketView } from './../containers/Product'
 
-const Basket = ({ items, visibility, onClick }) => {
+const Basket = ({ basket, items, visibility, onClick }) => {
     let products = [];
     if(items) {
         products = items.map((product, i) => {
-            let imageBase = "https://apparel-uk.profiledemo.aws.e2y.co.uk";
             return (
                 <ProductBasketView
                     sku={product.sku}
@@ -32,9 +31,14 @@ const Basket = ({ items, visibility, onClick }) => {
 
     let itemsClass = `items ${visibility}`;
 
+    let basketCode = "";
+    if(typeof basket !== "undefined") {
+        basketCode = ( <small>{basket.code}</small> );
+    }
+
     return (
         <div className="basket">
-            <h2 onClick={onClick}>Basket ({items.length})</h2>
+            <h2 onClick={onClick}>Basket ({items.length}) <br/>{basketCode}</h2>
             <div className={itemsClass}>
                 {products}
             </div>
